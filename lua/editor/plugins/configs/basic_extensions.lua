@@ -11,5 +11,5 @@ return {
 
     "tpope/vim-fugitive",
     "mkotha/conflict3",
-    "michaelsmith/vim-indent-object",
+    "michaeljsmith/vim-indent-object",
 }
