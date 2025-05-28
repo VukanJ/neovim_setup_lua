@@ -63,25 +63,29 @@ return {
            end,
         })
 
-        vim.api.nvim_create_autocmd("CursorHold", {
-            buffer = bufnr,
-            callback = function()
-                local opts = {
-                    focusable = false,
-                    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-                    border = 'single',
-                    source = 'always',
-                    prefix = ' ',
-                    scope = 'cursor',
-                }
-                vim.diagnostic.open_float(nil, opts)
-            end
-        })
+        -- vim.api.nvim_create_autocmd("CursorHold", {
+        --     buffer = bufnr,
+        --     callback = function()
+        --         local opts = {
+        --             focusable = false,
+        --             close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        --             border = 'single',
+        --             source = 'always',
+        --             prefix = ' ',
+        --             scope = 'cursor',
+        --         }
+        --         vim.diagnostic.open_float(nil, opts)
+        --     end
+        -- })
 
         vim.diagnostic.config({
+            underline = false,
             virtual_text = true,
             virtual_lines = {
                 current_line = true
+            },
+            float = {
+                border = "single",
             },
             signs = {
                 text = {
@@ -97,8 +101,6 @@ return {
                     [vim.diagnostic.severity.WARN] = 'WarningMsg'
                 },
             },
-            underline = false,
-            undercurl = false,
             update_in_insert = false,
             severity_sort = true,
         })
@@ -106,9 +108,9 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.buf.hover, {border = "rounded", })
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.buf.signature_help, {border = "rounded", })
-        vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false, undercurl = false })
+        -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.buf.hover, {border = "rounded", })
+        -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.buf.signature_help, {border = "rounded", })
+        -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { underline = false })
 
         mason_lspconfig.setup({
             automatic_enable = true,
