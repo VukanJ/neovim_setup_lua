@@ -8,4 +8,8 @@ return {
 
     "godlygeek/tabular",
     "mbbill/undotree",
+
+    "tpope/vim-fugitive",
+    "mkotha/conflict3",
+    "michaelsmith/vim-indent-object",
 }
