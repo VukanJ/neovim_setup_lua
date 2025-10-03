@@ -26,10 +26,31 @@ return {
                         type = "cpp";
                         request = "launch";
                         name = "Launch file";
-                        program = "${file}";
+                        program = "build/nav";
                     }
                 }
+                dap.adapters.cpp = {
+                    type = 'executable',
+                    command = 'codelldb', -- adjust as needed, must be absolute path
+                    name = "lldb"
+                }
+
+                vim.keymap.set("n", "<F12>", function() require'dap'.toggle_breakpoint() end)
+                vim.keymap.set("n", "<F2>", function()
+                    require'dap'.continue()
+                    require'dapui'.open()
+                    vim.opt.cursorline = true
+                end)
+                vim.keymap.set("n", "<F5>", function() require'dap'.step_over() end)
+                vim.keymap.set("n", "<F6>", function() require'dap'.step_into() end)
+                vim.keymap.set("n", "<F9>", function() require'dap'.continue() end)
+                vim.keymap.set("n", "<F3>", function()
+                    require'dap'.close()
+                    require'dapui'.close()
+                    vim.opt.cursorline = false
+                end)
             end
+
         },
         "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text",

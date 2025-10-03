@@ -1,3 +1,3 @@
 require("editor.setup")
 require("editor.plugins.init")
-vim.cmd('colorscheme sonokai')
+-- vim.cmd('colorscheme sonokai')
