@@ -34,6 +34,36 @@ return {
                     command = 'codelldb', -- adjust as needed, must be absolute path
                     name = "lldb"
                 }
+                dap.configurations.python = {
+                    {
+                        type = 'python';
+                        request = 'launch';
+                        name = "Launch file";
+                        program = "${file}";
+                        console = "integratedTerminal";
+                    },
+                    {
+                        type = 'python';
+                        request = 'launch';
+                        name = "Debug PYTEST";
+                        module = 'pytest';
+                        args = { "-v", "${file}" };
+                        console = "integratedTerminal";
+                    };
+                    {
+                        type = 'python';
+                        request = 'launch';
+                        name = "Debug PYTEST (verbose)";
+                        module = 'pytest';
+                        args = { "-v", "-s", "${file}" };
+                        console = "integratedTerminal";
+                    }
+                }
+                dap.adapters.python = {
+                    type = 'executable';
+                    command = 'python';
+                    args = { '-m', 'debugpy.adapter' };
+                }
 
                 vim.keymap.set("n", "<F12>", function() require'dap'.toggle_breakpoint() end)
                 vim.keymap.set("n", "<F2>", function()
