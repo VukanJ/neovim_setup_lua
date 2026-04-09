@@ -5,6 +5,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.o.backspace = 'indent,eol,start'
+vim.o.signcolumn = "yes:1" -- reserve once space for errors
 
 vim.o.number = true
 vim.o.foldlevel = 99
