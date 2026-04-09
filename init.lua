@@ -1,6 +1,7 @@
 require("config.settings")
 require("config.keymapping")
 require("config.basic")
+require("config.treesitter")
 require("config.cmp")
 require("config.lsp")
 require("config.barbar")
