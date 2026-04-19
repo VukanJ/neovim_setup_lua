@@ -1,6 +1,6 @@
 vim.pack.add {
-		{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
-		{ src = "https://github.com/romgrk/barbar.nvim" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/romgrk/barbar.nvim" },
 }
 
 local barbar = require("barbar")
