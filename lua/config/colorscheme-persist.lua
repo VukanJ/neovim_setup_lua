@@ -3,3 +3,7 @@ vim.pack.add {
 }
 
 require("colorscheme-persist").setup()
+
+vim.keymap.set("n", "<leader>sc", function()
+    require("colorscheme-persist").picker()
+end, { desc = "Choose colorscheme" })
