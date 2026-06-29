@@ -1,5 +1,13 @@
 vim.pack.add {
     "https://github.com/ivan-krukov/vim-snakemake",
+<<<<<<< Updated upstream
+=======
+    "https://github.com/rebelot/kanagawa.nvim",
+    "https://github.com/AlexvZyl/nordic.nvim",
+    "https://github.com/whatyouhide/vim-gotham",
+    "https://github.com/cryptomilk/nightcity.nvim",
+    "https://github.com/kungfusheep/mfd.nvim",
+>>>>>>> Stashed changes
 
     "https://github.com/godlygeek/tabular",
     "https://github.com/mbbill/undotree",

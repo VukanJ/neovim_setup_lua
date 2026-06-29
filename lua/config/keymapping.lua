@@ -22,3 +22,8 @@ end)
 
 -- Rename occurrences visually with s
 vim.keymap.set("n", "s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Colorscheme picker
+vim.keymap.set("n", "<leader>sc", function()
+    require("colorscheme-persist").picker()
+end, { desc = "Choose colorscheme" })
